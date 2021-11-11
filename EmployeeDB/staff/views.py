@@ -13,7 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout
-
+from django.contrib.auth.decorators import login_required
 
 class GetAllProfiles(LoginRequiredMixin, APIView):
 
@@ -67,7 +67,7 @@ class UploadProfile(LoginRequiredMixin, TemplateView):
         context = {}
         return render(request, template, context)
 
-
+@login_required(login_url='/login/')
 def home(request):
     return render(request, 'home.html')
 

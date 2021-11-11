@@ -25,7 +25,7 @@ from staff.views import UploadProfile, GetAllProfiles, home, login, logout_view,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload-csv/', UploadProfile.as_view(), name="upload-csv"),
-    path('home/', home, name="home"),
+    path('', home, name="home"),
     path('login/', login, name="login"),
     path('get-all-profiles/', GetAllProfiles.as_view(),
          name='get-all-profiles'),
