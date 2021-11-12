@@ -52,11 +52,13 @@
 <body>
 
     <div class="topnav">
-        <a  href="">Fingent Test</a>
+      
+        <a  href="">EMPLOYEE PORTAL</a>
+        {% if user.is_authenticated %}
        <a class="active"  href="/upload-csv">PROFILE ENTRY</a>
           <a   href="/get-all-profiles">EMPLOYEE PROFILES</a>
         <div class="topnav-right">
-          
+          {% endif %}
             <a href="#about">{% if user.is_authenticated %}
                 <p> {{ user.username }} </p>       
             {% endif %}</a>

@@ -106,9 +106,12 @@
 <!--Coded with love by Mutiullah Samim-->
 <body >
     <div class="topnav">
-        <a class="active" href="">Fingent Test</a>
+		
+        <a class="active" href="">EMPLOYEE PORTAL</a>
+		{% if user.is_authenticated %}
        <a href="/upload-csv">PROFILE ENTRY</a>
           <a  href="/get-all-profiles">EMPLOYEE PROFILES</a>
+		  {% endif %}
         <div class="topnav-right">
           
             <a href="#about">{% if user.is_authenticated %}
