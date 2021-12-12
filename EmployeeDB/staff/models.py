@@ -4,7 +4,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Employee(models.Model):
-    EmpCode = models.CharField(max_length=150)
+    EmpCode = models.IntegerField(blank=True, null=True)
     EmpName = models.EmailField(blank=True)
     Dept = models.CharField(max_length=50)
     Age = models.IntegerField(blank=True, null=True)

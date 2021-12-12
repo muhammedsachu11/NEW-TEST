@@ -19,16 +19,19 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from staff.views import UploadProfile, GetAllProfiles, home, login, logout_view, login_call
+from staff.views import UploadProfile, GetAllProfiles, home, login, logout_view, login_call, remove, edit, update
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload-csv/', UploadProfile.as_view(), name="upload-csv"),
+    path('upload-profile/', UploadProfile.as_view(), name="upload-profile"),
     path('', home, name="home"),
     path('login/', login, name="login"),
     path('get-all-profiles/', GetAllProfiles.as_view(),
          name='get-all-profiles'),
+    path('remove/<int:empcode>', remove, name='remove'),
+    path('edit/<int:empcode>', edit, name='edit'),
+    path('update/<int:empcode>', update, name='update'),
     path('login_call/', login_call, name='login_call'),
     path('logout_view/', logout_view, name='logout_view'),
 ]
